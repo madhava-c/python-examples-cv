@@ -89,7 +89,14 @@ window_name2 = "Gaussian Smoothing"  # window name
 
 # setup OpenCL if specified on command line only
 
+print(cv2.ocl.useOpenCL())
 cv2.ocl.setUseOpenCL(args.opencl)
+print(cv2.ocl.haveOpenCL())
+print(cv2.ocl.useOpenCL())
+device = cv2.ocl.Device.getDefault()
+print(device.name())
+print(device.vendorName())
+print(device.version())
 
 # if command line arguments are provided try to read video_name
 # otherwise default to capture from attached H/W camera
